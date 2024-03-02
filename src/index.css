@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+  background: #000;
+}
+
+a.active {
+  background-color: white;
+  color: black;
+}
+
+.bg-gradient {
+  background-color: #2a2928;
+  background-image: linear-gradient(315deg, #3f3e3c 0%, #cc9934 74%);
+}
+
+.line-indicator li {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.117);
+}
+
+.line-indicator li:hover {
+  background-color: rgba(255, 255, 255, 0.291);
+}
+
+.line-indicator li.slick-active {
+  background-color: gold;
+}
+
+.bg-image {
+  position: relative; /* Position relative to contain pseudo-element */
+  background-image: url("/bg.jpg"); /* Specify the URL of your image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-attachment: fixed; /* Fixed attachment, the background stays in place while the content scrolls */
+}
+
+.bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .bg-image {
+    background-attachment: scroll;
+    background-size: contain;
+    object-fit: contain;
+  }
+}
+.bg-gold-grad {
+  background-image: repeating-linear-gradient(to right, #a2682a 0%, #be8c3c 8%, #be8c3c 18%, #d3b15f 27%, #faf0a0 35%, #ffffc2 40%, #faf0a0 50%, #d3b15f 58%, #be8c3c 67%, #b17b32 77%, #bb8332 83%, #d4a245 88%, #e1b453 93%, #a4692a 100%);
+  background-size: 150%;
+  filter: drop-shadow(0 0 1px rgba(255, 200, 0, .3));
+  animation: MoveBackgroundPosition 6s ease-in-out infinite;
+}
+
+@keyframes MoveBackgroundPosition { 
+  0% {
+      background-position: 0% 50%
+  }
+  
+  50% {
+    background-position: 100% 50%
+  }
+  
+  100% {
+    background-position: 0% 50%
+  }
+}
